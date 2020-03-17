@@ -6,7 +6,7 @@ const { Screen, Navigator } = createBottomTabNavigator();
 
 import IconNotify from '../components/IconNotify';
 
-import Main from '$root/Pages/Main';
+import Chats from '$root/Pages/Chats';
 import Peoples from '$root/Pages/Peoples';
 
 
@@ -15,11 +15,26 @@ function Routes() {
   return (
     <Navigator 
       initialRouteName="Feed"
+      navigationOptions={
+          {
+              gesturesEnabled:true
+          }
+      }
       tabBarOptions={{
-        activeTintColor: themeContext.primary,
+        activecolor: themeContext.primary,
+        inactivecolor: themeContext.tertiary,
+        upperCaseLabel:false,
+        indicatorStyle:{
+          height:0
+        },
+        showIcon:true,
+        showLabel:true,
+        style:{
+            backgroundColor: themeContext.secundary,
+        },
       }}>
 
-      <Screen name="Chats" component={Main}
+      <Screen name="Chats" component={Chats}
         options={{
           tabBarLabel: "Chats",
           tabBarIcon: ({ color, size }) => (

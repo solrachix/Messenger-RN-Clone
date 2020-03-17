@@ -1,5 +1,6 @@
 import React, { useContext  } from 'react';
 import { ThemeContext } from 'styled-components';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets  } from '@react-navigation/stack';
@@ -12,30 +13,32 @@ const { Screen, Navigator } = createStackNavigator();
 function Routes() {  
   const themeContext = useContext(ThemeContext).colors;
   return (
-    <NavigationContainer>
-      <Navigator
-        initialRouteName="BottomRoutes"
-        headerMode="none"
-        screenOptions={{
-            headerStyle: {
-                backgroundColor: themeContext.secundary,
-                height: 60,
-            },
-            headerTintColor: 'red',
-            gestureEnabled: true,
-            cardOverlayEnabled: true,                    
-            headerStyle: { backgroundColor: themeContext.secundary },
-            ...TransitionPresets.ModalPresentationIOS,
-        }}    
-        // mode="modal"
-      >
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Navigator
+          initialRouteName="BottomRoutes"
+          headerMode="none"
+          screenOptions={{
+              headerStyle: {
+                  backgroundColor: themeContext.secundary,
+                  height: 60,
+              },
+              headerTintColor: 'red',
+              gestureEnabled: true,
+              cardOverlayEnabled: true,                    
+              headerStyle: { backgroundColor: themeContext.secundary },
+              ...TransitionPresets.ModalPresentationIOS,
+          }}    
+          // mode="modal"
+        >
 
-        <Screen name="BottomRoutes" component={BottomRoutes} />
+          <Screen name="BottomRoutes" component={BottomRoutes} />
 
-        <Screen name="Camera" component={Camera} />
+          <Screen name="Camera" component={Camera} />
 
-      </Navigator>
-    </NavigationContainer>
+        </Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
