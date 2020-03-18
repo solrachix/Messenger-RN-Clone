@@ -7,6 +7,7 @@ import { createStackNavigator, TransitionPresets  } from '@react-navigation/stac
 
 import BottomRoutes from './Routes/BottomTabsNavigator';
 import Camera from '$root/Pages/Camera';
+import Story from '$root/Pages/Story';
 
 const { Screen, Navigator } = createStackNavigator();
 
@@ -29,12 +30,14 @@ function Routes() {
               headerStyle: { backgroundColor: themeContext.secundary },
               ...TransitionPresets.ModalPresentationIOS,
           }}    
-          // mode="modal"
+          mode="modal"
         >
 
           <Screen name="BottomRoutes" component={BottomRoutes} />
 
           <Screen name="Camera" component={Camera} />
+
+          <Screen name="Story" component={Story} />
 
         </Navigator>
       </NavigationContainer>

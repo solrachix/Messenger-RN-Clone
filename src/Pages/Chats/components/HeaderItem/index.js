@@ -1,18 +1,38 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+
 import Search from '$root/components/Search';
 
-// import { Container } from './styles';
+import temporaryData from '../../temporaryData';
 
-export default function HeaderItem() {
+import { Container, FlatList, Simple } from './styles';
+
+export default function HeaderItem({ navigation }) {
+  const [ story, setStory ] = useState(temporaryData.story);
   const [ search, setSearch ] = useState("");
+  
   return (
-    <View>
+    <Container>
       <Search 
         placeholder="Search..."
         onChangeText={setSearch}
         value={search}
       />
-    </View>
+
+      <FlatList
+        horizontal
+        data={story}
+        renderItem={({item}) => (
+            <Simple 
+              horizontal
+              key={item.id}
+              onPress={()=> navigation.navigate('Story', { userId: item.id })}
+
+              online={item.online}
+              image={item.avatar}
+            />
+        )}
+
+      />      
+    </Container>
   );
 }

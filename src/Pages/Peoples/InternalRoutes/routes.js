@@ -2,9 +2,11 @@ import React, { useContext  } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { createStackNavigator, TransitionPresets  } from '@react-navigation/stack';
+import Icon from '@expo/vector-icons/Feather';
 
-import Main from './Main';
-import TalkPage from './TalkPage';
+import Header from "$root/components/Header";
+import Stories from './Stories';
+import Online from './Online';
 
 const { Screen, Navigator } = createStackNavigator();
 
@@ -12,9 +14,15 @@ function Routes() {
   const themeContext = useContext(ThemeContext).colors;
   return (
     <Navigator
-      initialRouteName="Main"
+      initialRouteName="Stories"
       headerMode="screen"
       screenOptions={{
+          header: () => <Header title="Pessoas"
+            icon={[
+              <Icon name="camera" size={25} color={themeContext.primary}/>,
+              <Icon name="edit" size={25} color={themeContext.primary}/>
+            ]}
+          />,
           headerStyle: {
               backgroundColor: themeContext.secundary,
               height: 60,
@@ -28,9 +36,9 @@ function Routes() {
       // mode="modal"
     >
 
-      <Screen name="Main" component={Main} />
+      <Screen name="Stories" component={Stories}/>
 
-      <Screen name="TalkPage" component={TalkPage} />
+      <Screen name="Online" component={Online} />
 
     </Navigator>
   );

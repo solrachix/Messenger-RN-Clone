@@ -9,7 +9,7 @@ import HeaderItems from "../../components/HeaderItem";
 import { Container } from './styles';
 
 export default function Main({ navigation }) {
-  const [ friends, setFriends ] = useState(Friends);
+  const [ friends, setFriends ] = useState(Friends.conversations);
 
   return (
     <Container>
@@ -27,7 +27,7 @@ export default function Main({ navigation }) {
                 spotlight={item.message}
             />
         )}
-        ListHeaderComponent={<HeaderItems/>}
+        ListHeaderComponent={<HeaderItems navigation={navigation} />}
       />
 
     </Container>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import Svg, {
     Path, Rect,
   } from 'react-native-svg';
@@ -7,7 +7,7 @@ import Svg, {
 
 import { Avatar } from './styles';
 
-export default function StatusAvatar({ border, array, image, horizontal = false, style, ...props }) {
+export default function StatusAvatar({border, array, image, ...props}) {
   const [pd,setPd] = useState("")
   const [path,setPath] = useState([])
 
@@ -33,7 +33,7 @@ export default function StatusAvatar({ border, array, image, horizontal = false,
       let rot = 270;
       await array.map(i=>{
         arr.push(
-          <View key={N()} style={{position: horizontal ? "relative" : "absolute"}}> 
+          <View key={N()} style={{position:'absolute'}}> 
             <Svg width="70" height="70">
               <Path d={pd} fill="none" stroke={i[1]==0?"#007dff":"#b7b7b7"} strokeWidth={2} transform={{ rotation: rot, originX: 35, originY: 35 }} />
             </Svg>
@@ -52,10 +52,7 @@ export default function StatusAvatar({ border, array, image, horizontal = false,
   return (
     <>
       {path}
-      <Avatar 
-        source={{uri:image}} 
-        style={[{ position: horizontal ? "relative" : "absolute" }, style]}
-      />
+      <Avatar source={{uri:image}} {...props}/>
     </>
   );
 }

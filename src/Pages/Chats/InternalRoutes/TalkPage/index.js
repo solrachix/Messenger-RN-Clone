@@ -10,7 +10,7 @@ import Input from '../../components/Input';
 export default function TalkPage({ route, navigation }) {
   const userId = route.params.userId;
   let flatList;
-  const [friends, setFriends] = useState(temporaryData);
+  const [friends, setFriends] = useState(temporaryData.conversations);
   const [friend, setFriend] = useState({});
 
   useEffect(()=>{
@@ -50,6 +50,7 @@ export default function TalkPage({ route, navigation }) {
             />
           }
           stickyHeaderIndices={[0]}
+          
           data={friend.latestMessages}
           renderItem={({item}) => (
             <Bubble key={item.id} my={item.my} MessageData={item} />

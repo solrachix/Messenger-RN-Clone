@@ -1,7 +1,10 @@
 import React, { useContext  } from 'react';
 import { ThemeContext } from 'styled-components';
+import Icon from '@expo/vector-icons/Feather';
 
 import { createStackNavigator, TransitionPresets  } from '@react-navigation/stack';
+
+import Header from "$root/components/Header";
 
 import Main from './Main';
 import TalkPage from './TalkPage';
@@ -28,7 +31,14 @@ function Routes() {
       // mode="modal"
     >
 
-      <Screen name="Main" component={Main} />
+      <Screen name="Main" component={Main} options={{
+        header: () => <Header title="Conversas"
+        icon={[
+          <Icon name="camera" size={25} color={themeContext.primary}/>,
+          <Icon name="edit" size={25} color={themeContext.primary}/>
+        ]}        
+      />,
+      }} />
 
       <Screen name="TalkPage" component={TalkPage} />
 
