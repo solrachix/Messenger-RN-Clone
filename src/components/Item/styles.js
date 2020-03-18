@@ -5,22 +5,25 @@ export const Container = styled.TouchableOpacity`
     padding: 15px;
     height: 80px;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 0px;
 `;
 
 export const Body = styled.View`
-    margin-left:70px;
+    margin-left:20px;
     height: 80px;
-    justify-content: center;
     width: 100%;
-    border-bottom-color: ${props => props.theme.colors.text};
+
+    justify-content: center;
+
+    border-bottom-color: ${props => props.theme.colors.text};    
     border-bottom-width: 0.3px;
 `;
 
 export const TitleContainer = styled.View`
     margin-bottom: 5px;
     width: 82%;
-    height: 20px;
+    max-height: 20px;
+    
     align-items: baseline;
     justify-content: space-between;
     flex-flow: column wrap;

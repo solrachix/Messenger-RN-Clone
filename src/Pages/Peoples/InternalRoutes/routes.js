@@ -1,39 +1,25 @@
 import React, { useContext  } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { createStackNavigator, TransitionPresets  } from '@react-navigation/stack';
-import Icon from '@expo/vector-icons/Feather';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import Header from "$root/components/Header";
+import TabBar from '../components/TabBar';
 import Stories from './Stories';
 import Online from './Online';
 
-const { Screen, Navigator } = createStackNavigator();
+const { Screen, Navigator } = createMaterialTopTabNavigator();
 
 function Routes() {  
   const themeContext = useContext(ThemeContext).colors;
   return (
     <Navigator
       initialRouteName="Stories"
-      headerMode="screen"
-      screenOptions={{
-          header: () => <Header title="Pessoas"
-            icon={[
-              <Icon name="camera" size={25} color={themeContext.primary}/>,
-              <Icon name="edit" size={25} color={themeContext.primary}/>
-            ]}
-          />,
-          headerStyle: {
-              backgroundColor: themeContext.secundary,
-              height: 60,
-          },
-          headerTintColor: themeContext.primary,
-          gestureEnabled: true,
-          cardOverlayEnabled: true,                    
-          headerStyle: { backgroundColor: themeContext.secundary },
-          ...TransitionPresets.ModalPresentationIOS,
-      }}    
-      // mode="modal"
+      tabBarPosition="top"
+      keyboardDismissMode="on-drag"
+      tabBarOptions={{
+        showIcon: true
+      }}
+      tabBar={props => <TabBar {...props} />}
     >
 
       <Screen name="Stories" component={Stories}/>

@@ -24,7 +24,6 @@ function Routes() {
                   backgroundColor: themeContext.secundary,
                   height: 60,
               },
-              headerTintColor: 'red',
               gestureEnabled: true,
               cardOverlayEnabled: true,                    
               headerStyle: { backgroundColor: themeContext.secundary },

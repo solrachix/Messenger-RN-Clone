@@ -1,19 +1,19 @@
 import React, { useContext  } from 'react';
-import { View, Text } from 'react-native';
 import { ThemeContext } from 'styled-components';
 
-import StatusAvatar from '$root/components/StatusAvatar';
+import StatusAvatar from '$root/components/StatusAvatar/Simple';
 
 import { Container, Body, TitleContainer, FirstTitle, SecundTitle, Spotlight, Icon } from './styles';
 
 export default function Item(
   { 
-    border = false,
-    borderArray = [],
+    border = true,
     avatar,
     titleContainer,
     spotlight = false,
     CustomSearchlight = false,
+    online = false,
+    avatarSize,
     ...props
   }) {
   const themeContext = useContext(ThemeContext).colors;
@@ -29,41 +29,43 @@ export default function Item(
   };
   return (
     <Container {...props}>
-        <StatusAvatar {...border} array={borderArray} image={avatar} />
+        <StatusAvatar image={avatar} avatarSize={avatarSize} online={online} />
         
-        <Body>
+        <Body style={{ borderBottomWidth: border ? 0.3 : 0 }}>
           <TitleContainer>
             <FirstTitle style={color}>{titleContainer.firstTitle}</FirstTitle>
             <SecundTitle style={color}>
               {titleContainer.secundTitle}
             </SecundTitle>
           </TitleContainer>
-
-          <TitleContainer>
-            { 
-              CustomSearchlight
-                && 
-                  <Icon>{CustomSearchlight.statusIcon}</Icon>
-            }
-            
-            <TitleContainer style={{width: "92%"}}>
-              <FirstTitle numberOfLines={1}>              
-                {
-                  spotlight 
-                  ? spotlight[2] 
-                  : CustomSearchlight 
-                    ? CustomSearchlight.status
-                    : null
+          {
+            spotlight && 
+              <TitleContainer>
+                { 
+                  CustomSearchlight
+                    && 
+                      <Icon>{CustomSearchlight.statusIcon}</Icon>
                 }
-              </FirstTitle>
-            </TitleContainer>
-            { 
-              spotlight[0] 
-                && 
-                  <Spotlight>{spotlight[1]}</Spotlight>
-            }
-          </TitleContainer>
-        </Body>
+                
+                <TitleContainer style={{width: "92%"}}>
+                  <FirstTitle numberOfLines={1}>              
+                    {
+                      spotlight 
+                      ? spotlight[2] 
+                      : CustomSearchlight 
+                        ? CustomSearchlight.status
+                        : null
+                    }
+                  </FirstTitle>
+                </TitleContainer>
+                { 
+                  spotlight[0] 
+                    && 
+                      <Spotlight>{spotlight[1]}</Spotlight>
+                }
+              </TitleContainer>
+          }
+          </Body>
     </Container>
   );
 }

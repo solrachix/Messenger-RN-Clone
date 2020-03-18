@@ -18,12 +18,15 @@ export default function Header({ title, icon, ...props }) {
         {
           Array.isArray(icon) 
             ?
-              icon.map(item => (
-                <Button style={{
-                  padding: 8,
-                  borderRadius: 50,
-                  backgroundColor: themeContext.tertiary,
-                }}>
+              icon.map((item, index) => (
+                <Button 
+                  key={index}
+                  style={{
+                    padding: 8,
+                    borderRadius: 50,
+                    backgroundColor: themeContext.tertiary,
+                  }}
+                >
                   {item}
                 </Button>
               ))

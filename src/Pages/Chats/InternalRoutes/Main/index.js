@@ -19,6 +19,8 @@ export default function Main({ navigation }) {
         renderItem={({item}) => (
             <Item key={item.id}
                 onPress={()=> navigation.navigate('TalkPage', { userId: item.id }) }
+                border={true}
+                borderArray={[[12,1],[1231,0],[123,0],[1231,0]]}
                 avatar={item.image}
                 titleContainer={{
                     firstTitle: item.name,
