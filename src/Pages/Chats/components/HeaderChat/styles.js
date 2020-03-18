@@ -65,7 +65,7 @@ export const Text = styled.Text`
 
 export const Title = styled.Text`
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     /* margin-left: 20px; */
     color: ${props => props.theme.colors.text}
 `;

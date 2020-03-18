@@ -13,24 +13,31 @@ export default function HeaderChat({ navigation, data,...props }) {
       // console.log(data);
       navigation.navigate('Chats', { screen: 'Profile' });
   }
+  function handleBack(){
+    navigation.goBack()
+  }
   return (
     <Container {...props}>
       <Button>
+
+        <Button onPress={handleBack}>
           <IconIo name="ios-arrow-round-back" size={40} color={themeContext.primary} />
+        </Button>
+
           <Image source={{ uri: data?.image }}/>
           <Title>{data ? data.name : "loading..."}</Title>
       </Button>
 
       <Group>
         <Button>
-          <IconFa name="telephone" size={30} color={themeContext.primary}/>
+          <IconFa name="telephone" size={28} color={themeContext.primary}/>
         </Button>
 
         <Button onPress={handleAvatar}>
-          <IconIo name="ios-videocam" size={30} color={themeContext.primary} />
+          <IconIo name="ios-videocam" size={28} color={themeContext.primary} />
         </Button>
         <Button onPress={handleAvatar}>
-          <IconIo name="ios-information-circle" size={30} color={themeContext.primary} />
+          <IconIo name="ios-information-circle" size={28} color={themeContext.primary} />
         </Button>
       </Group>
       
