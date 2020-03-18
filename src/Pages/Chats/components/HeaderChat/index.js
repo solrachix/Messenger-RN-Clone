@@ -16,11 +16,10 @@ export default function HeaderChat({ navigation, data,...props }) {
   return (
     <Container {...props}>
       <Button>
-          <IconIo name="ios-arrow-back" size={20} color={themeContext.primary} />
-          <Text>Voltar</Text>
+          <IconIo name="ios-arrow-round-back" size={40} color={themeContext.primary} />
+          <Image source={{ uri: data?.image }}/>
+          <Title>{data ? data.name : "loading..."}</Title>
       </Button>
-
-      <Title>{data ? data.name : "loading..."}</Title>
 
       <Group>
         <Button>
@@ -28,8 +27,11 @@ export default function HeaderChat({ navigation, data,...props }) {
         </Button>
 
         <Button onPress={handleAvatar}>
-            <Image source={{ uri: data?.image }}/>
-        </Button> 
+          <IconIo name="ios-videocam" size={30} color={themeContext.primary} />
+        </Button>
+        <Button onPress={handleAvatar}>
+          <IconIo name="ios-information-circle" size={30} color={themeContext.primary} />
+        </Button>
       </Group>
       
     </Container>

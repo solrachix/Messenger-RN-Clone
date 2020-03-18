@@ -30,12 +30,14 @@ export const Container = styled.View`
 `;
 
 export const Group = styled.View`
-    /* width: 100%; */
+    width: 30%;
     height: 100%;
 
     flex-direction: row;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -45,10 +47,11 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const Image = styled.Image`
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 
-    margin-left: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
 
     border-radius: 50px;
 `;
