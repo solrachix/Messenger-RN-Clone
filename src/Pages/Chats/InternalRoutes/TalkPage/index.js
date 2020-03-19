@@ -42,6 +42,7 @@ export default function TalkPage({ route, navigation }) {
 
   return (
       <Container behavior="padding">
+
         <FlatList
           ListHeaderComponent={
             <HeaderChat
@@ -52,8 +53,8 @@ export default function TalkPage({ route, navigation }) {
           stickyHeaderIndices={[0]}
           
           data={friend.latestMessages}
-          renderItem={({item}) => (
-            <Bubble key={item.id} my={item.my} MessageData={item} />
+          renderItem={({item, ...props}) => (
+            <Bubble key={item.id} my={item.my} next={friend.latestMessages[props.index + 1]} MessageData={item} {...props} data={friend.latestMessages}/>
           )}
           keyExtractor={(item) => item.id}
 
@@ -62,7 +63,6 @@ export default function TalkPage({ route, navigation }) {
           onContentSizeChange={() => flatList.scrollToEnd({animated: true})}
           onLayout={() => flatList.scrollToEnd({animated: true})}
         />
-        
 
         <Input navigation={navigation}/>
     </Container>

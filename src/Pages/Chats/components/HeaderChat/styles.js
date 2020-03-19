@@ -13,6 +13,7 @@ export const Container = styled.View`
   top: 0;
   left: 0px;
   right: 0px;
+  bottom: 0px;
 
   flex-direction: row;
   flex-flow: row wrap;

@@ -84,6 +84,73 @@ export default {
                     text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
                     sendDate: "2013-02-08 09:40"
                 },
+                {   
+                    id:'13',
+                    my: true,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'14',
+                    my: true,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'15',
+                    my: true,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'16',
+                    my: true,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'17',
+                    my: false,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'18',
+                    my: false,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'19',
+                    my: false,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+
+                {   
+                    id:'20',
+                    my: false,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'21',
+                    my: false,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'22',
+                    my: true,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
+                {   
+                    id:'23',
+                    my: true,
+                    text: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    sendDate: "2013-02-08 09:40"
+                },
             ]
         },
         {
