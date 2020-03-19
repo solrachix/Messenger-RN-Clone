@@ -10,7 +10,7 @@ import Light from '$root/styles/themes/Light';
 import Dark from '$root/styles/themes/Dark';
 
 export default function App() {
-  const [theme, setTheme] = usePersistedState('theme', Dark);
+  const [theme, setTheme] = usePersistedState('theme', Light);
   return (
     <ThemeProvider theme={theme}>
       <StatusBar hidden />
