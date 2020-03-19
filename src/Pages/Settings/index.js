@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import Entypo from '@expo/vector-icons/Entypo';
 import AntDesign from '@expo/vector-icons/AntDesign';
@@ -9,8 +9,14 @@ import BigAvatar from '$root/components/StatusAvatar/BigAvatar';
 
 import { Container, BigAvatarContainer, Ul, Li, Icon, IconContainer, Title, Text } from './styles';
 
-export default function Settings({ navigation }) {
+import Light from '$root/styles/themes/Light';
+import Dark from '$root/styles/themes/Dark';
 
+export default function Settings({ navigation }) {
+  
+  function handleChangeTheme(){
+    setTheme(theme)
+  }
   return (
     <Container>
 
@@ -23,7 +29,7 @@ export default function Settings({ navigation }) {
       <Ul>
       
         <Li // Modo Escuro
-          onPress={()=> {}}
+          onPress={handleChangeTheme}
           icon={
             <IconContainer>
               <Icon name="md-moon" size={24} />

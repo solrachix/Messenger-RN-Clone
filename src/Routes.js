@@ -12,8 +12,9 @@ import Settings from '$root/Pages/Settings';
 
 const { Screen, Navigator } = createStackNavigator();
 
-function Routes() {  
+function Routes({ theme }) {  
   const themeContext = useContext(ThemeContext).colors;
+  
   return (
     <SafeAreaProvider>
       <NavigationContainer>
@@ -39,7 +40,7 @@ function Routes() {
 
           <Screen name="Story" component={Story} />
 
-          <Screen name="Settings" component={Settings} />
+          <Screen name="Settings" component={Settings} theme={theme} />
 
         </Navigator>
       </NavigationContainer>

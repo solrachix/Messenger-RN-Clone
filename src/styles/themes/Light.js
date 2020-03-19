@@ -1,5 +1,5 @@
 export default {
-    title: 'Tartarus',
+    title: 'Light',
   
     colors: {
       primary: '#007dff',

@@ -6,15 +6,16 @@ import Routes from '$root/Routes';
 import {name as appName} from './app.json';
 
 import usePersistedState from '$root/utils/usePersistedState';
-import Light from '$root/styles/themes/Dark';
+import Light from '$root/styles/themes/Light';
+import Dark from '$root/styles/themes/Dark';
 
 export default function App() {
-  const [theme, setTheme] = usePersistedState('theme', Light);
+  const [theme, setTheme] = usePersistedState('theme', Dark);
   return (
     <ThemeProvider theme={theme}>
       <StatusBar hidden />
-      <Routes/> 
-    </ThemeProvider>   
+      <Routes theme={theme} /> 
+    </ThemeProvider>
   );
 }
 
