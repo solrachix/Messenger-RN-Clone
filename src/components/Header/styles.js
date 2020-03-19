@@ -36,8 +36,8 @@ export const Group = styled.View`
 
 export const Title = styled.Text`
     font-weight: bold;
-    font-size: 25px;
-    margin-left: 10px;
+    font-size: 22px;
+    margin-left: -50px;
     color: ${props => props.theme.colors.text};
 `;
 

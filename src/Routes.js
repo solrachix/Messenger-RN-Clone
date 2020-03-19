@@ -8,6 +8,7 @@ import { createStackNavigator, TransitionPresets  } from '@react-navigation/stac
 import BottomRoutes from './Routes/BottomTabsNavigator';
 import Camera from '$root/Pages/Camera';
 import Story from '$root/Pages/Story';
+import Settings from '$root/Pages/Settings';
 
 const { Screen, Navigator } = createStackNavigator();
 
@@ -37,6 +38,8 @@ function Routes() {
           <Screen name="Camera" component={Camera} />
 
           <Screen name="Story" component={Story} />
+
+          <Screen name="Settings" component={Settings} />
 
         </Navigator>
       </NavigationContainer>

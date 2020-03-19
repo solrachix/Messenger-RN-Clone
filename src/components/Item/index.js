@@ -9,11 +9,12 @@ export default function Item(
   { 
     border = true,
     avatar,
+    avatarSize,
+    icon,
     titleContainer,
     spotlight = false,
     CustomSearchlight = false,
     online = false,
-    avatarSize,
     ...props
   }) {
   const themeContext = useContext(ThemeContext).colors;
@@ -29,7 +30,7 @@ export default function Item(
   };
   return (
     <Container {...props}>
-        <StatusAvatar image={avatar} avatarSize={avatarSize} online={online} />
+        <StatusAvatar image={avatar} avatarSize={avatarSize} online={online} icon={icon} />
         
         <Body style={{ borderBottomWidth: border ? 0.3 : 0 }}>
           <TitleContainer>

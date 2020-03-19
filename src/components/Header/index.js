@@ -3,17 +3,18 @@ import { ThemeContext } from "styled-components";
 
 import { Container, Group, Title, Button, StatusAvatar } from './styles';
 
-export default function Header({ title, icon, ...props }) {
+export default function Header({ title, icon, onPress, ...props }) {
   const themeContext = useContext(ThemeContext).colors;
 
   return (
     <Container {...props}>
 
-      <Button>
+      <Button onPress={onPress}>
         <StatusAvatar array={[[0,1]]} image='https://avatars1.githubusercontent.com/u/57706806?s=60&v=4'/>
-        <Title>{ title }</Title>
       </Button>
-      
+
+      <Title>{ title }</Title>
+
       <Group>
         {
           Array.isArray(icon) 

@@ -13,6 +13,7 @@ const { Screen, Navigator } = createStackNavigator();
 
 function Routes() {  
   const themeContext = useContext(ThemeContext).colors;
+  
   return (
     <Navigator
       initialRouteName="Main"
@@ -32,13 +33,16 @@ function Routes() {
     >
 
       <Screen name="Main" component={Main} options={{
-        header: () => <Header title="Conversas"
-        icon={[
-          <Icon name="camera" size={25} color={themeContext.primary}/>,
-          <Icon name="edit" size={25} color={themeContext.primary}/>
-        ]}        
-      />,
-      }} />
+        header: ({ navigation }) => 
+          <Header title="Bate-papos"
+            onPress={() => navigation.navigate('Settings')}
+            icon={[
+              <Icon name="camera" size={25} color={themeContext.primary}/>,
+              <Icon name="edit" size={25} color={themeContext.primary}/>
+            ]}
+          />,
+        }}
+      />
 
       <Screen name="TalkPage" component={TalkPage} />
 
